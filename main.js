@@ -6,28 +6,28 @@ fetchStudents((rawData) => {
     const students = rawData.map(data => new Student(data.id, data.name, data.courses));
 
     console.log("Testing Immutability:");
-    console.log('Original ID: ${students[0].id}');
+    console.log(`Original ID: ${students[0].id}`);
     console.log("Attempting to change ID to 999");
     try{
         students[0].id = 999;
     }catch (e){
 
     }
-    console.log('Final ID: ${students[0].id} (success: ID did not change)\n');
+    console.log(`Final ID: ${students[0].id} (success: ID did not change)\n`);
 
     console.log("Analytics Report");
 
     const avg101 = calculateClassAvarage(students, 101);
-    console.log('Class Avrage for Course 101: ${avg101}');
+    console.log(`Class Avrage for Course 101: ${avg101}`);
 
     const topStudent = findTopStudent(students);
     if(topStudent){
-        console.log('Top Student: ${topStudent.name} (Average: ${topStudent.getAverage().toFixed(1)})');
+        console.log(`Top Student: ${topStudent.name} (Average: ${topStudent.getAverage().toFixed(1)})`);
     }
     const course102Students =filterStudents(students, student => student.courses.some(c => c.courseId === 102)
 );
 const names102 = course102Students.map(s => s.name).join(", ");
-console.log('Students in Course 102: ${names102}')
+console.log(`Students in Course 102: ${names102}`)
     
     
 })

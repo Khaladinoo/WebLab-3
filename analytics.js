@@ -2,7 +2,7 @@ function calculateClassAvarage(students, courseId){
     let totalScore = 0;
     let count = 0;
     students.forEach(student => {
-        const courses = student.course.find(c => c.courseId === courseId);
+        const course = student.courses.find(c => c.courseId === courseId);
         if (course) {
             totalScore += course.grade;
             count++;
