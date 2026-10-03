@@ -14,6 +14,18 @@ fetchStudents((rawData) => {
 
     }
     console.log('Final ID: ${students[0].id} (success: ID did not change)\n');
+
+    console.log("Analytics Report");
+
+    const avg101 = calculateClassAvarage(students, 101);
+    console.log('Class Avrage for Course 101: ${avg101}');
+
+    const topStudent = findTopStudent(students);
+    if(topStudent){
+        console.log('Top Student: ${topStudent.name} (Average: ${topStudent.getAverage().toFixed(1)})');
+        
+    }
+
     
     
 })
