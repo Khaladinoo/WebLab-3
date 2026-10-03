@@ -5,6 +5,12 @@ class Student{
             writable: false,
             configurable: false,
             enumerable: true
-        })
+        });
+        this.name = name;
+        this.courses = courses;
+    }
+
+    addCourse(courseId, grade){
+        this.courses.push({courseId , grade});
     }
 }
