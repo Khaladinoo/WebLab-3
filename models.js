@@ -13,4 +13,10 @@ class Student{
     addCourse(courseId, grade){
         this.courses.push({courseId , grade});
     }
+    getAvrage(){
+        if(this.courses.length === 0) return0;
+        const total = this.courses.reduce((sum, courses) => sum + courses.grade, 0);
+        return total / this.courses.length;
+    }
 }
+  export { Student };
