@@ -9,6 +9,7 @@ function calculateClassAvarage(students, courseId){
         }
     });
     return count > 0 ? (totalScore / count).toFixed(2) : 0;
+}
     function findTopStudent(students){
         if (!students || students.length === 0) return null;
 
@@ -16,5 +17,8 @@ function calculateClassAvarage(students, courseId){
         return current.getAverage() > top.getAverage() ? current : top;
         });
     }
-    
-}
+    function filterStudents(students, criteriaFn) {
+        return students.filter(criteriaFn);
+    }
+    export{calculateClassAvarage, findTopStudent, filterStudents};
+
