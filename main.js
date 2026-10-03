@@ -23,9 +23,11 @@ fetchStudents((rawData) => {
     const topStudent = findTopStudent(students);
     if(topStudent){
         console.log('Top Student: ${topStudent.name} (Average: ${topStudent.getAverage().toFixed(1)})');
-        
     }
-
+    const course102Students =filterStudents(students, student => student.courses.some(c => c.courseId === 102)
+);
+const names102 = course102Students.map(s => s.name).join(", ");
+console.log('Students in Course 102: ${names102}')
     
     
 })
